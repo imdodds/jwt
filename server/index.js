@@ -19,7 +19,7 @@ app.post('/api/register', async (req, res) => {
     });
     res.json({ status: 'ok' });
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     res.json({ status: 'error' });
   }
 });
@@ -34,10 +34,11 @@ app.post('/api/login', async (req, res) => {
   if (user) {
     return res.json({ status: 'ok', user: true });
   } else {
+    console.log('error');
     return res.json({ status: 'error', user: false });
   }
 });
 
-app.listen(3000, () => {
-  console.log('Server listening in port 3000');
+app.listen(3333, () => {
+  console.log('Server listening in port 3333');
 });
